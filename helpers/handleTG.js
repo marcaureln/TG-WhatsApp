@@ -239,9 +239,9 @@ const handleTgBot = async (ctx, client, MessageMedia) => {
           ? msg.text.split(chatId.split("@")[0])[1].trim()
           : msg.text;
 
-        const message = `${getChatTitle(msg)} [${parseLink(
-          msg
-        )}]\n\n${message_}`;
+        const message = config.slientMode
+          ? message_
+          : `${getChatTitle(msg)} [${parseLink(msg)}]\n\n${message_}`;
 
         waMsg = await client.sendMessage(chatId, message, {
           quotedMessageId: msgId,

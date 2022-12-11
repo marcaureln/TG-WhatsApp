@@ -54,9 +54,13 @@ client.on("message", async (msg) => {
       const keyboard = Markup.inlineKeyboard([
         Markup.button.callback("Connect", whatsAppChat.id._serialized),
       ]);
-      await msg.reply(
-        "connection request send to telegram. waiting for approval!"
-      );
+      
+      if (!config.slientMode) {
+        await msg.reply(
+          "connection request send to telegram. waiting for approval!"
+        );
+      }
+
       client.tgbot.telegram.sendMessage(
         chatID,
         `${msg.author} requested to connect this chat with ${whatsAppChat.name}`,
@@ -132,10 +136,13 @@ bot.on("callback_query", async (ctx) => {
         }
       }
       if (value == "true") {
-        await client.sendMessage(
-          waChatID,
-          `this chat is connected now with telegram!`
-        );
+        if (!config.slientMode) {
+          await client.sendMessage(
+            waChatID,
+            `this chat is connected now with telegram!`
+          );
+        }
+
         ctx.answerCbQuery("Successfully Connected!", {
           show_alert: true,
         });
@@ -196,10 +203,12 @@ bot.command("disconnect", async (ctx) => {
             cachedData.delete(data.whatsAppID);
           }
 
-          await client.sendMessage(
-            data.whatsAppID,
-            "this chat is now disconnected!"
-          );
+          if (!config.slientMode) {
+            await client.sendMessage(
+              data.whatsAppID,
+              "this chat is now disconnected!"
+            );
+          }
         } else {
           ctx.reply(`no chat found to Disconnect!.`);
         }
