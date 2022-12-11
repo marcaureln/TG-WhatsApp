@@ -165,10 +165,14 @@ bot.on("callback_query", async (ctx) => {
         { $set: { whatsAppID: waChatID } },
         { upsert: true }
       );
-      await client.sendMessage(
-        waChatID,
-        `this chat is connected with ${chatTitle} on telegram!`
-      );
+
+      if (!config.slientMode) {
+        await client.sendMessage(
+          waChatID,
+          `this chat is connected with ${chatTitle} on telegram!`
+        );
+      }
+
       cachedData.set(tgID, waChatID);
       cachedData.set(waChatID, tgID);
     } catch (error) {
