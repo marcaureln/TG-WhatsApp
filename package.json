@@ -1,38 +1,38 @@
 {
-  "name": "whatsbot",
-  "version": "3.0.0",
-  "description": "Realtime integration of WhatsApp <-> Telegram",
-  "main": "main.js",
-  "scripts": {
-    "start": "node startProcess.js",
-    "gentoken": "node session/genToken.js",
-    "gentokenwithdownload": "node session/genTokenWithDownload.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/subinps/TG-WhatsApp"
-  },
-  "keywords": [
-    "whatsapp-bot",
-    "telegram",
-    "bridge"
-  ],
-  "author": "SUBIN",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/subinps/TG-WhatsApp/issues"
-  },
-  "homepage": "https://github.com/subinps/TG-WhatsApp#readme",
-  "dependencies": {
-    "adm-zip": "^0.5.10",
-    "aes-encrypt-stream": "^0.2.0",
-    "axios": "^1.3.4",
-    "dotenv": "^16.0.3",
-    "mongodb": "^5.1.0",
-    "qr-image": "^3.2.0",
-    "qrcode-svg": "^1.1.0",
-    "qrcode-terminal": "^0.12.0",
-    "telegraf": "^4.11.2",
-    "whatsapp-web.js": "^1.19.4"
-  }
+	"name": "whatsbot",
+	"version": "3.0.0",
+	"description": "Realtime integration of WhatsApp <-> Telegram",
+	"main": "main.js",
+	"scripts": {
+		"start": "node startProcess.js",
+		"gentoken": "node session/genToken.js",
+		"gentokenwithdownload": "node session/genTokenWithDownload.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/subinps/TG-WhatsApp"
+	},
+	"keywords": [
+		"whatsapp-bot",
+		"telegram",
+		"bridge"
+	],
+	"author": "SUBIN",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/subinps/TG-WhatsApp/issues"
+	},
+	"homepage": "https://github.com/subinps/TG-WhatsApp#readme",
+	"dependencies": {
+		"adm-zip": "0.5.9",
+		"aes-encrypt-stream": "^0.2.0",
+		"axios": "^1.3.4",
+		"dotenv": "^16.0.3",
+		"mongodb": "^5.1.0",
+		"qr-image": "^3.2.0",
+		"qrcode-svg": "^1.1.0",
+		"qrcode-terminal": "^0.12.0",
+		"telegraf": "^4.11.2",
+		"whatsapp-web.js": "^1.19.4"
+	}
 }
